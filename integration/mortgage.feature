@@ -3,6 +3,7 @@ Feature: Ultimate Mortgage Calculator  Basic Mortgage Calculator successful subm
    Scenario: Check if Ultimate Mortgage Calculator  Basic Mortgage Calculator returns successful messages
       
       Given I open basic mortgage calculator page
+      
       When I enter the values for amount and term
        |amount|term|
        |250000| 27 |
@@ -12,4 +13,5 @@ Feature: Ultimate Mortgage Calculator  Basic Mortgage Calculator successful subm
        |rate  | fee  |
        |1.41  | 1198 |
        |1.60  | 2500 |
+      
       Then I submit the form

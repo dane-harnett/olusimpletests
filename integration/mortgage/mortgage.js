@@ -1,13 +1,13 @@
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
 
 
-Given('Given I open basic mortgage calculator page', () => {
+Given('I open basic mortgage calculator page', () => {
 
     cy.visit('https://www.moneysavingexpert.com/mortgages/mortgage-rate-calculator/')
 
 });
 
-   When('I enter the value for mortgage debt', datatable => {
+   When('I enter the values for amount and term', datatable => {
 
     datatable.hashes().forEach [element => {
         cy.get('#amount').clear(element.amount) 
@@ -25,12 +25,12 @@ Given('Given I open basic mortgage calculator page', () => {
             cy.get('#fees-value').clear(element.fee) 
             cy.get('#fees-value').type(element.fee)
             
-        }];
+        }]
     
     Then('I submit the form')
         cy.get('.btn--default').click()
     
     
-      })
+      });
 
    })
